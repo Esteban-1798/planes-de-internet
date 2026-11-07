@@ -1,0 +1,23 @@
+body {
+    background-color: #d6ebff;
+    text-align: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1b2a3a;
+}
+
+h1 {
+    color: #0b4f8a;
+}
+
+h2 {
+    color: #0b4f8a;
+}
+
+p {
+    font-size: 18px;
+}
+
+.descuento {
+    color: green;
+    font-weight: bold;
+}

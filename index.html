@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Internet</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<script>
+
+let Nombre = prompt("Digite el nombre del usuario ")
+let Plan, Meses
+let NombrePlan, Velocidad, ValorMensual
+let Subtotal, Porcentaje, Descuento, Total
+
+Plan = parseInt(prompt("Digite el tipo de plan:\n1 - Basico (10 Mbps)\n2 - Estandar (50 Mbps)\n3 - Premium (100 Mbps)"))
+
+Meses = parseInt(prompt("Digite el numero de meses de contrato "))
+
+switch (Plan) {
+    case 1:
+        NombrePlan = "Basico"
+        Velocidad = "10 Mbps"
+        ValorMensual = 40000
+        break
+    case 2:
+        NombrePlan = "Estandar"
+        Velocidad = "50 Mbps"
+        ValorMensual = 70000
+        break
+    case 3:
+        NombrePlan = "Premium"
+        Velocidad = "100 Mbps"
+        ValorMensual = 100000
+        break
+    default:
+        NombrePlan = "No valido"
+        Velocidad = "-"
+        ValorMensual = 0
+}
+
+Subtotal = ValorMensual * Meses
+
+Porcentaje = 0
+
+if (Meses >= 6) {
+    Porcentaje = 10
+}
+if (Meses >= 12) {
+    Porcentaje = 20
+}
+
+Descuento = Subtotal * Porcentaje / 100
+Total = Subtotal - Descuento
+
+document.write ("<h1>Planes de Internet</h1>")
+document.write ("<p>Nombre del cliente : " + Nombre + "</p>")
+document.write ("<p>Tipo de plan : " + NombrePlan + " (" + Velocidad + ")</p>")
+document.write ("<p>Valor mensual : $" + ValorMensual + "</p>")
+document.write ("<p>Numero de meses : " + Meses + "</p>")
+
+if (Porcentaje > 0) {
+    document.write ("<p class='descuento'>Descuento aplicado : " + Porcentaje + "% ($" + Descuento + ")</p>")
+} else {
+    document.write ("<p>Descuento aplicado : Ninguno</p>")
+}
+
+document.write ("<h2>Total a pagar : $" + Total + "</h2>")
+
+</script>
+
+</body>
+</html>
